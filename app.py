@@ -87,8 +87,8 @@ live()
 @st.fragment(run_every='2s')
 def live1():
 
-    df = fetch_historical_data(selected_coin, selected_timeframe)
-        
+    df = fetch_historical_data1(selected_coin, selected_timeframe)
+
     if df.empty or len(df) < 2:
         st.warning("Not enough market data")
         st.stop()
