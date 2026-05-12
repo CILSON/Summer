@@ -88,7 +88,9 @@ def live1():
 
     df = fetch_historical_data1(selected_coin, selected_timeframe)
     if df.empty or len(df) < 2:
+        st.warning("Not enough market data")
         change = 0
+        return
     else:
         latest = float(df['Close'].iloc[0])
         previous = float(df['Close'].iloc[1])
