@@ -21,6 +21,7 @@ def fetch_historical_data(symbol='BTCUSDT', timeframe="1h"):
             return pd.DataFrame()
 
         data = response.json()
+        st.write(data)
 
         # Check if Binance returned an error object
         if isinstance(data, dict):
