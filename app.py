@@ -77,7 +77,7 @@ def live():
         value=f"${latest:,.2f}",
         delta=f"{change:.2f}%"
     )
-        st.caption(f"Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    st.caption(f"Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
 
 live()
