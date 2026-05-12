@@ -7,3 +7,4 @@ torch
 python-binance
 requests
 ta
+seaborn
