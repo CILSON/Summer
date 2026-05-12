@@ -26,20 +26,6 @@ html, body, [class*="css"] {
 }
 
 /* =========================
-   APP BACKGROUND — LIGHT
-========================= */
-
-[data-theme="light"] .stApp,
-.stApp[data-theme="light"] {
-    background: #f5f5f0 !important;
-    color: #1a1a1a !important;
-}
-
-[data-theme="light"] {
-    background-color: #f5f5f0 !important;
-}
-
-/* =========================
    TITLE
 ========================= */
 
@@ -48,19 +34,6 @@ h1 {
     font-weight: 800 !important;
     color: #f8fafc;
     letter-spacing: -1px;
-}
-
-[data-theme="light"] h1 {
-    color: #111111 !important;
-}
-
-[data-theme="light"] h2,
-[data-theme="light"] h3,
-[data-theme="light"] p,
-[data-theme="light"] span,
-[data-theme="light"] label,
-[data-theme="light"] div {
-    color: #1a1a1a !important;
 }
 
 /* =========================
@@ -89,29 +62,6 @@ h1 {
         0 12px 35px rgba(59,130,246,0.15);
 }
 
-[data-theme="light"] [data-testid="stMetric"] {
-    background: linear-gradient(
-        145deg,
-        #ffffff,
-        #f0efe8
-    ) !important;
-    border: 1px solid rgba(0,0,0,0.08) !important;
-    box-shadow:
-        0 0 0 rgba(0,0,0,0),
-        0 10px 30px rgba(0,0,0,0.07) !important;
-}
-
-[data-theme="light"] [data-testid="stMetric"]:hover {
-    box-shadow:
-        0 12px 35px rgba(59,130,246,0.12) !important;
-}
-
-[data-theme="light"] [data-testid="stMetric"] label,
-[data-theme="light"] [data-testid="stMetricLabel"],
-[data-theme="light"] [data-testid="stMetricValue"],
-[data-theme="light"] [data-testid="stMetricDelta"] {
-    color: #1a1a1a !important;
-}
 
 /* =========================
    SELECTBOXES
@@ -129,21 +79,6 @@ div[data-baseweb="select"] > div:hover {
     border: 1px solid rgba(59,130,246,0.5) !important;
 }
 
-[data-theme="light"] div[data-baseweb="select"] > div {
-    background: #ffffff !important;
-    border: 1px solid rgba(0,0,0,0.12) !important;
-    color: #1a1a1a !important;
-}
-
-[data-theme="light"] div[data-baseweb="select"] > div:hover {
-    border: 1px solid rgba(59,130,246,0.5) !important;
-}
-
-[data-theme="light"] [data-baseweb="select"] span,
-[data-theme="light"] [data-baseweb="select"] div {
-    color: #1a1a1a !important;
-}
-
 /* =========================
    TABS
 ========================= */
@@ -151,10 +86,6 @@ div[data-baseweb="select"] > div:hover {
 button[data-baseweb="tab"] {
     color: #94a3b8;
     font-weight: 600;
-}
-
-[data-theme="light"] button[data-baseweb="tab"] {
-    color: #4a4a4a !important;
 }
 
 /* =========================
@@ -174,16 +105,6 @@ button[data-baseweb="tab"] {
         0 10px 30px rgba(0,0,0,0.3);
 }
 
-[data-theme="light"] .element-container:has(.js-plotly-plot) {
-    background: linear-gradient(
-        145deg,
-        #ffffff,
-        #f0efe8
-    ) !important;
-    border: 1px solid rgba(0,0,0,0.06) !important;
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.07) !important;
-}
 
 /* =========================
    DATAFRAME
@@ -193,10 +114,6 @@ button[data-baseweb="tab"] {
     border-radius: 18px;
     overflow: hidden;
     border: 1px solid rgba(255,255,255,0.05);
-}
-
-[data-theme="light"] .stDataFrame {
-    border: 1px solid rgba(0,0,0,0.08) !important;
 }
 
 /* =========================
@@ -215,21 +132,3 @@ section[data-testid="stSidebar"] {
     background-color: #0f172a;
 }
 
-[data-theme="light"] section[data-testid="stSidebar"] {
-    background-color: #eaeae3 !important;
-}
-
-[data-theme="light"] section[data-testid="stSidebar"] * {
-    color: #1a1a1a !important;
-}
-
-/* =========================
-   GENERAL TEXT OVERRIDES — LIGHT
-========================= */
-
-[data-theme="light"] .stMarkdown,
-[data-theme="light"] .stText,
-[data-theme="light"] [data-testid="stText"],
-[data-theme="light"] [data-testid="stMarkdownContainer"] {
-    color: #1a1a1a !important;
-}
