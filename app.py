@@ -67,17 +67,17 @@ def live():
     if df.empty or len(df) < 2:
         st.warning("Not enough market data")
         # st.stop()
+    else:
+        latest = float(df['Close'].iloc[0])
+        previous = float(df['Close'].iloc[1])
+        change = ((latest / previous) - 1) * 100
 
-    latest = float(df['Close'].iloc[0])
-    previous = float(df['Close'].iloc[1])
-    change = ((latest / previous) - 1) * 100
-
-    st.metric(
-        label=f"{selected_coin} Price Binance",
-        value=f"${latest:,.2f}",
-        delta=f"{change:.2f}%"
-    )
-    st.caption(f"Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        st.metric(
+            label=f"{selected_coin} Price Binance",
+            value=f"${latest:,.2f}",
+            delta=f"{change:.2f}%"
+        )
+        st.caption(f"Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
 
 live()
@@ -90,18 +90,18 @@ def live1():
     if df.empty or len(df) < 2:
         st.warning("Not enough market data")
         st.stop()
+    else: 
+        latest = float(df['Close'].iloc[0])
+        previous = float(df['Close'].iloc[1])
+        change = ((latest / previous) - 1) * 100
 
-    latest = float(df['Close'].iloc[0])
-    previous = float(df['Close'].iloc[1])
-    change = ((latest / previous) - 1) * 100
 
-
-    st.metric(
-        label=f"{selected_coin} Price Binance",
-        value=f"${latest:,.2f}",
-        delta=f"{change:.2f}%"
-    )
-    st.caption(f"Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        st.metric(
+            label=f"{selected_coin} Price Binance",
+            value=f"${latest:,.2f}",
+            delta=f"{change:.2f}%"
+        )
+        st.caption(f"Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
 
 live1()
