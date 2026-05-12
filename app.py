@@ -141,7 +141,7 @@ tab1, tab2 = st.tabs([
 
 with tab1:
 
-    st.subheader(f"{selected_coin} Price Chart")
+    st.subheader(f"{selected_timeframef}{selected_coin} Price Chart")
 
     if chart == "Candle" or chart == None:
         live_chart("Candle")
