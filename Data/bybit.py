@@ -29,4 +29,5 @@ def fetch_historical_data1(symbol='BTCUSDT', timeframe="1M"):
         return df
 
     except Exception as e:
-        st.error(e)
+        print(e)
+        return pd.dataFrame()
