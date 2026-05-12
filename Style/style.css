@@ -1,0 +1,11 @@
+/* Reduce top padding */
+.block-container {
+    padding-top: 2rem;
+}
+
+/* Metric styling */
+[data-testid="stMetric"] {
+    background-color: #111827;
+    padding: 15px;
+    border-radius: 12px;
+}
