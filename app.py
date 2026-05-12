@@ -113,7 +113,7 @@ live1()
 @st.cache_data(ttl=120)
 def live_chart(chart):
 
-    df = fetch_historical_data(selected_coin, selected_timeframe, limit)
+    df = fetch_historical_data(selected_coin, selected_timeframe)
 
     chart_df = df.sort_values(
         'OpenTime',
