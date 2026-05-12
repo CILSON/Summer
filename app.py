@@ -60,26 +60,33 @@ with col3:
 # LIVE PRICE
 # =================================
 
-@st.fragment(run_every='2s')
+@st.fragment(run_every='5s')
 def live():
 
-    df = fetch_historical_data(selected_coin, selected_timeframe, limit=5)
-    
+    placeholder = st.empty()
+
+    df = fetch_historical_data(selected_coin, selected_timeframe)
+
     if df.empty or len(df) < 2:
-        st.warning("Not enough market data")
-        st.stop()
+        placeholder.warning("Not enough market data")
+        return
 
     latest = float(df['Close'].iloc[0])
     previous = float(df['Close'].iloc[1])
+
     change = ((latest / previous) - 1) * 100
 
-    st.metric(
-        label=f"{selected_coin} Price Binance",
-        value=f"${latest:,.2f}",
-        delta=f"{change:.2f}%"
-    )
-    st.caption(f"Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    with placeholder.container():
 
+        st.metric(
+            label=f"{selected_coin} Price Binance",
+            value=f"${latest:,.2f}",
+            delta=f"{change:.2f}%"
+        )
+
+        st.caption(
+            f"Last updated: {datetime.now().strftime('%H:%M:%S')}"
+        )
 
 live()
 
