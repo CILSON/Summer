@@ -1,11 +1,134 @@
-/* Reduce top padding */
+/* =========================
+   GLOBAL
+========================= */
+
 .block-container {
     padding-top: 2rem;
+    max-width: 95%;
 }
 
-/* Metric styling
+/* Smooth font rendering */
+html, body, [class*="css"] {
+    font-family: 'Inter', sans-serif;
+}
+
+/* =========================
+   APP BACKGROUND — DARK (default)
+========================= */
+
+.stApp {
+    background: linear-gradient(
+        180deg,
+        #020617 0%,
+        #071226 100%
+    );
+    color: #f8fafc;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+h1 {
+    font-size: 3rem !important;
+    font-weight: 800 !important;
+    color: #f8fafc;
+    letter-spacing: -1px;
+}
+
+/* =========================
+   METRIC CARD
+========================= */
+
 [data-testid="stMetric"] {
-    background-color: #111827;
-    padding: 15px;
-    border-radius: 12px;
-} */
+    background: linear-gradient(
+        145deg,
+        rgba(15,23,42,0.95),
+        rgba(17,24,39,0.9)
+    );
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 22px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    box-shadow:
+        0 0 0 rgba(0,0,0,0),
+        0 10px 30px rgba(0,0,0,0.35);
+    transition: all 0.3s ease;
+}
+
+[data-testid="stMetric"]:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 12px 35px rgba(59,130,246,0.15);
+}
+
+
+/* =========================
+   SELECTBOXES
+========================= */
+
+div[data-baseweb="select"] > div {
+    background: rgba(15,23,42,0.85) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    border-radius: 16px !important;
+    color: #f8fafc !important;
+    transition: all 0.2s ease;
+}
+
+div[data-baseweb="select"] > div:hover {
+    border: 1px solid rgba(59,130,246,0.5) !important;
+}
+
+/* =========================
+   TABS
+========================= */
+
+button[data-baseweb="tab"] {
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+/* =========================
+   CHART CONTAINER
+========================= */
+
+.element-container:has(.js-plotly-plot) {
+    background: linear-gradient(
+        145deg,
+        rgba(15,23,42,0.95),
+        rgba(17,24,39,0.9)
+    );
+    padding: 20px;
+    border-radius: 22px;
+    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.3);
+}
+
+
+/* =========================
+   DATAFRAME
+========================= */
+
+.stDataFrame {
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* =========================
+   REMOVE STREAMLIT HEADER GAP
+========================= */
+
+header {
+    background: transparent !important;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+section[data-testid="stSidebar"] {
+    background-color: #0f172a;
+}
+
