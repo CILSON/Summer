@@ -4,7 +4,7 @@ import pandas as pd
 
 def fetch_historical_data(symbol='BTCUSDT', timeframe="1h"):
 
-    url = "https://api.binance.com/api/v3/klines"
+    url = "https://data-api.binance.vision/api/v3/klines"
 
     params = {
         'symbol': symbol,
