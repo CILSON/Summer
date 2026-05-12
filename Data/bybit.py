@@ -10,7 +10,7 @@ def fetch_historical_data1(symbol='BTCUSDT', timeframe="1M"):
     data = session.get_kline(
         category="spot",
         symbol="BTCUSDT",
-        interval=60
+        interval="60"
     )
 
     data = data['result']['list']
