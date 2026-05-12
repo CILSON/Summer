@@ -63,7 +63,7 @@ with col3:
 @st.fragment(run_every='2s')
 def live():
 
-    df = fetch_historical_data(selected_coin, selected_timeframe)
+    df = fetch_historical_data(selected_coin, selected_timeframe, limit=5)
     
     if df.empty or len(df) < 2:
         st.warning("Not enough market data")
@@ -110,10 +110,10 @@ live1()
 # =================================
 # CHART DATA
 # =================================
-@st.fragment(run_every='2m')
+@st.cache_data(ttl=120)
 def live_chart(chart):
 
-    df = fetch_historical_data(selected_coin, selected_timeframe)
+    df = fetch_historical_data(selected_coin, selected_timeframe, limit)
 
     chart_df = df.sort_values(
         'OpenTime',
@@ -158,10 +158,10 @@ with tab2:
 
     st.subheader(f"{selected_timeframe} Historical Data")
 
-    @st.fragment(run_every='2s')
+    @st.cache_data(ttl=120)
     def live_table():
 
-        df = fetch_historical_data(selected_coin, selected_timeframe)
+        df = fetch_historical_data(selected_coin, selected_timeframe, limit=1000)
         st.dataframe(df)
 
     live_table()

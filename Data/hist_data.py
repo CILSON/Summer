@@ -2,14 +2,14 @@ import requests as req
 import pandas as pd
 
 
-def fetch_historical_data(symbol='BTCUSDT', timeframe="1h"):
+def fetch_historical_data(symbol='BTCUSDT', timeframe="1h", limit=100):
 
     url = "https://data-api.binance.vision/api/v3/klines"
 
     params = {
         'symbol': symbol,
         'interval': timeframe,
-        'limit': 1000
+        'limit': limit
     }
 
     try:
