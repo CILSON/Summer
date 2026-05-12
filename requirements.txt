@@ -1,0 +1,9 @@
+streamlit
+plotly
+pandas
+numpy
+scikit-learn
+torch
+python-binance
+requests
+ta
