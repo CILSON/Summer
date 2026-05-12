@@ -65,12 +65,12 @@ def live():
 
     df = fetch_historical_data(selected_coin, selected_timeframe)
     if df.empty or len(df) < 2:
+        st.warning("Not enough market data")
         change = 0
     else:
         latest = float(df['Close'].iloc[0])
         previous = float(df['Close'].iloc[1])
-
-    change = ((latest / previous) - 1) * 100
+        change = ((latest / previous) - 1) * 100
 
     st.metric(
         label=f"{selected_coin} Price Binance",
@@ -94,8 +94,8 @@ def live1():
     else:
         latest = float(df['Close'].iloc[0])
         previous = float(df['Close'].iloc[1])
+        change = ((latest / previous) - 1) * 100
 
-    change = ((latest / previous) - 1) * 100
 
     st.metric(
         label=f"{selected_coin} Price Binance",
