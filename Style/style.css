@@ -100,10 +100,10 @@ button[data-baseweb="tab"] {
     font-weight: 600;
 }
 
-button[data-baseweb="tab"][aria-selected="true"] {
+/* button[data-baseweb="tab"][aria-selected="true"] {
     color: #f8fafc;
     border-bottom: 2px solid #3b82f6;
-}
+} */
 
 /* =========================
    CHART CONTAINER
