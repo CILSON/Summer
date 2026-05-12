@@ -83,28 +83,27 @@ def live():
 
 live()
 
+# @st.fragment(run_every='2s')
+# def live1():
 
-@st.fragment(run_every='2s')
-def live1():
+#     df = fetch_historical_data1(selected_coin, selected_timeframe)
 
-    df = fetch_historical_data1(selected_coin, selected_timeframe)
+#     if df.empty or len(df) < 2:
+#         st.warning("Bybit comparison temporarily unavailable")
+#         return
 
-    if df.empty or len(df) < 2:
-        st.warning("Bybit comparison temporarily unavailable")
-        return
+#     latest = float(df['Close'].iloc[0])
+#     previous = float(df['Close'].iloc[1])
+#     change = ((latest / previous) - 1) * 100
 
-    latest = float(df['Close'].iloc[0])
-    previous = float(df['Close'].iloc[1])
-    change = ((latest / previous) - 1) * 100
+#     st.metric(
+#         label=f"{selected_coin} Price Binance",
+#         value=f"${latest:,.2f}",
+#         delta=f"{change:.2f}%"
+#     )
+#     st.caption(f"Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    st.metric(
-        label=f"{selected_coin} Price Binance",
-        value=f"${latest:,.2f}",
-        delta=f"{change:.2f}%"
-    )
-    st.caption(f"Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-
-live1()
+# live1()
 
 
 # =================================
@@ -113,7 +112,7 @@ live1()
 @st.cache_data(ttl=120)
 def live_chart(chart):
 
-    df = fetch_historical_data(selected_coin, selected_timeframe)
+    df = fetch_historical_data(selected_coin, selected_timeframe, limit=100)
 
     chart_df = df.sort_values(
         'OpenTime',
@@ -141,7 +140,7 @@ tab1, tab2 = st.tabs([
 
 with tab1:
 
-    st.subheader(f"{selected_timeframe}{selected_coin} Price Chart")
+    st.subheader(f"{selected_timeframe} {selected_coin} Price Chart")
 
     if chart == "Candle" or chart == None:
         live_chart("Candle")
@@ -161,7 +160,7 @@ with tab2:
     @st.cache_data(ttl=120)
     def live_table():
 
-        df = fetch_historical_data(selected_coin, selected_timeframe, limit=1000)
+        df = fetch_historical_data(selected_coin, selected_timeframe, limit=100)
         st.dataframe(df)
 
     live_table()
