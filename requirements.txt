@@ -8,3 +8,5 @@ python-binance
 requests
 ta
 seaborn
+pybit
+matplotlib
