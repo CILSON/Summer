@@ -109,7 +109,7 @@ live()
 # =================================
 # CHART DATA
 # =================================
-@st.cache_data(ttl=120)
+@st.cache_data(ttl=2)
 def live_chart(chart):
 
     df = fetch_historical_data(selected_coin, selected_timeframe, limit=100)
@@ -157,7 +157,7 @@ with tab2:
 
     st.subheader(f"{selected_timeframe} Historical Data")
 
-    @st.cache_data(ttl=120)
+    @st.cache_data(ttl=2)
     def live_table():
 
         df = fetch_historical_data(selected_coin, selected_timeframe, limit=100)
