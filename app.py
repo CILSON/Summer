@@ -60,7 +60,7 @@ with col3:
 # LIVE PRICE
 # =================================
 
-@st.fragment(run_every='2s')
+@st.fragment(run_every='5s')
 def live():
 
     df = fetch_historical_data(selected_coin, selected_timeframe, limit=5)
