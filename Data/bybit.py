@@ -7,12 +7,19 @@ from datetime import datetime
 
 def fetch_historical_data1(symbol='BTCUSDT', timeframe="1M"):
     try:
-        session = HTTP(testnet=False)
-        data = session.get_kline(
-            category="spot",
-            symbol=symbol,
-            interval=timeframe
-        )
+        url = "https://api.bybit.com/v5/market/kline"
+
+        params = {
+            "category": "spot",
+            "symbol": "BTCUSDT",
+            "interval": "60",
+            "limit": 10
+        }
+
+        response = requests.get(url, params=params)
+
+        data = response.json()
+
         print(data)
 
         data = data['result']['list']
