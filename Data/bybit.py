@@ -13,6 +13,7 @@ def fetch_historical_data1(symbol='BTCUSDT', timeframe="1M"):
             symbol=symbol,
             interval=timeframe
         )
+        print(data)
 
         data = data['result']['list']
 
