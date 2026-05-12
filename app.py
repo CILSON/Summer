@@ -64,6 +64,9 @@ with col3:
 def live():
 
     df = fetch_historical_data(selected_coin, selected_timeframe)
+    st.write("RAW RESPONSE:")
+    st.write(df)
+    
     if df.empty or len(df) < 2:
         st.warning("Not enough market data")
         st.stop()
