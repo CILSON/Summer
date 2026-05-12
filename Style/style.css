@@ -16,6 +16,7 @@ html, body, [class*="css"] {
    APP BACKGROUND
 ========================= */
 
+/* --- Dark Mode (default) --- */
 .stApp {
     background: linear-gradient(
         180deg,
@@ -25,6 +26,18 @@ html, body, [class*="css"] {
     color: #f8fafc;
 }
 
+/* --- Light Mode --- */
+@media (prefers-color-scheme: light) {
+    .stApp {
+        background: linear-gradient(
+            180deg,
+            #f0f4ff 0%,
+            #e8eef8 100%
+        );
+        color: #0f172a;
+    }
+}
+
 /* =========================
    TITLE
 ========================= */
@@ -32,8 +45,14 @@ html, body, [class*="css"] {
 h1 {
     font-size: 3rem !important;
     font-weight: 800 !important;
-    color: #f8fafc;
     letter-spacing: -1px;
+    color: #f8fafc;
+}
+
+@media (prefers-color-scheme: light) {
+    h1 {
+        color: #0f172a;
+    }
 }
 
 /* =========================
@@ -46,27 +65,39 @@ h1 {
         rgba(15,23,42,0.95),
         rgba(17,24,39,0.9)
     );
-
     border: 1px solid rgba(255,255,255,0.06);
-
     padding: 22px;
-
     border-radius: 20px;
-
     backdrop-filter: blur(12px);
-
     box-shadow:
         0 0 0 rgba(0,0,0,0),
         0 10px 30px rgba(0,0,0,0.35);
-
     transition: all 0.3s ease;
 }
 
-/* Hover effect */
 [data-testid="stMetric"]:hover {
     transform: translateY(-2px);
     box-shadow:
         0 12px 35px rgba(59,130,246,0.15);
+}
+
+@media (prefers-color-scheme: light) {
+    [data-testid="stMetric"] {
+        background: linear-gradient(
+            145deg,
+            rgba(255,255,255,0.95),
+            rgba(248,250,252,0.9)
+        );
+        border: 1px solid rgba(15,23,42,0.08);
+        box-shadow:
+            0 0 0 rgba(0,0,0,0),
+            0 10px 30px rgba(15,23,42,0.08);
+    }
+
+    [data-testid="stMetric"]:hover {
+        box-shadow:
+            0 12px 35px rgba(59,130,246,0.12);
+    }
 }
 
 /* =========================
@@ -74,21 +105,27 @@ h1 {
 ========================= */
 
 div[data-baseweb="select"] > div {
-
     background: rgba(15,23,42,0.85) !important;
-
     border: 1px solid rgba(255,255,255,0.08) !important;
-
     border-radius: 16px !important;
-
     color: #f8fafc !important;
-
     transition: all 0.2s ease;
 }
 
-/* Hover */
 div[data-baseweb="select"] > div:hover {
     border: 1px solid rgba(59,130,246,0.5) !important;
+}
+
+@media (prefers-color-scheme: light) {
+    div[data-baseweb="select"] > div {
+        background: rgba(255,255,255,0.9) !important;
+        border: 1px solid rgba(15,23,42,0.12) !important;
+        color: #0f172a !important;
+    }
+
+    div[data-baseweb="select"] > div:hover {
+        border: 1px solid rgba(59,130,246,0.5) !important;
+    }
 }
 
 /* =========================
@@ -100,31 +137,40 @@ button[data-baseweb="tab"] {
     font-weight: 600;
 }
 
-/* button[data-baseweb="tab"][aria-selected="true"] {
-    color: #f8fafc;
-    border-bottom: 2px solid #3b82f6;
-} */
+@media (prefers-color-scheme: light) {
+    button[data-baseweb="tab"] {
+        color: #64748b;
+    }
+}
 
 /* =========================
    CHART CONTAINER
 ========================= */
 
 .element-container:has(.js-plotly-plot) {
-
     background: linear-gradient(
         145deg,
         rgba(15,23,42,0.95),
         rgba(17,24,39,0.9)
     );
-
     padding: 20px;
-
     border-radius: 22px;
-
     border: 1px solid rgba(255,255,255,0.05);
-
     box-shadow:
         0 10px 30px rgba(0,0,0,0.3);
+}
+
+@media (prefers-color-scheme: light) {
+    .element-container:has(.js-plotly-plot) {
+        background: linear-gradient(
+            145deg,
+            rgba(255,255,255,0.95),
+            rgba(248,250,252,0.9)
+        );
+        border: 1px solid rgba(15,23,42,0.06);
+        box-shadow:
+            0 10px 30px rgba(15,23,42,0.07);
+    }
 }
 
 /* =========================
@@ -132,12 +178,15 @@ button[data-baseweb="tab"] {
 ========================= */
 
 .stDataFrame {
-
     border-radius: 18px;
-
     overflow: hidden;
-
     border: 1px solid rgba(255,255,255,0.05);
+}
+
+@media (prefers-color-scheme: light) {
+    .stDataFrame {
+        border: 1px solid rgba(15,23,42,0.08);
+    }
 }
 
 /* =========================
@@ -154,4 +203,10 @@ header {
 
 section[data-testid="stSidebar"] {
     background-color: #0f172a;
+}
+
+@media (prefers-color-scheme: light) {
+    section[data-testid="stSidebar"] {
+        background-color: #e2e8f4;
+    }
 }
