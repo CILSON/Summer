@@ -1,11 +1,64 @@
-/* Reduce top padding */
+/* =========================
+   GLOBAL
+========================= */
+
 .block-container {
     padding-top: 2rem;
 }
 
-/* Metric styling */
-[data-testid="stMetric"] {
-    background-color: #111827;
-    padding: 15px;
-    border-radius: 12px;
+/* =========================
+   DARK MODE
+========================= */
+
+@media (prefers-color-scheme: dark) {
+
+    .stApp {
+        background-color: #020817;
+        color: white;
+    }
+
+    [data-testid="stMetric"] {
+        background-color: #111827;
+        padding: 15px;
+        border-radius: 12px;
+        border: 1px solid #1f2937;
+    }
+
+    div[data-baseweb="select"] > div {
+        background-color: #111827 !important;
+        border: 1px solid #374151 !important;
+        color: white !important;
+        border-radius: 10px;
+    }
+}
+
+/* =========================
+   LIGHT MODE
+========================= */
+
+@media (prefers-color-scheme: light) {
+
+    .stApp {
+        background-color: #f3f4f6;
+        color: #111827;
+    }
+
+    [data-testid="stMetric"] {
+        background-color: white;
+        padding: 15px;
+        border-radius: 12px;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    div[data-baseweb="select"] > div {
+        background-color: white !important;
+        border: 1px solid #d1d5db !important;
+        color: #111827 !important;
+        border-radius: 10px;
+    }
+
+    h1, h2, h3 {
+        color: #111827;
+    }
 }
