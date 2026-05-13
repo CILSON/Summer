@@ -7,6 +7,8 @@ from Data.bybit import fetch_historical_data1
 import streamlit as st
 from datetime import datetime
 
+import pytz
+
 # =================================
 # LOAD CSS
 # =================================

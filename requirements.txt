@@ -10,3 +10,4 @@ ta
 seaborn
 pybit
 matplotlib
+pytz
