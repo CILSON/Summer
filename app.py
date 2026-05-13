@@ -20,9 +20,6 @@ def load_css():
 
 load_css()
 
-# Define the India Standard Time Zone
-ist = pytz.timezone('Asia/Kolkata')
-
 # =================================
 # TITLE AND PAGE CONFIG
 # =================================
@@ -80,7 +77,7 @@ def live():
         value=f"${latest:,.2f}",
         delta=f"{change:.2f}%"
     )
-    st.caption(f"Last updated: {datetime.now(ist).strftime('%Y-%m-%d %H:%M:%S')}")
+    st.caption(f"Last updated: {datetime.now(pytz.timezone('Asia/Kolkata')).strftime('%Y-%m-%d %H:%M:%S')}")
 
 
 live()
