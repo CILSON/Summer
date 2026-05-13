@@ -20,6 +20,8 @@ def load_css():
 
 load_css()
 
+# Define the India Standard Time Zone
+ist = pytz.timezone('Asia/Kolkata')
 
 # =================================
 # TITLE AND PAGE CONFIG
