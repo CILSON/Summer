@@ -84,29 +84,6 @@ def live():
 
 live()
 
-# @st.fragment(run_every='2s')
-# def live1():
-
-#     df = fetch_historical_data1(selected_coin, selected_timeframe)
-
-#     if df.empty or len(df) < 2:
-#         st.warning("Bybit comparison temporarily unavailable")
-#         return
-
-#     latest = float(df['Close'].iloc[0])
-#     previous = float(df['Close'].iloc[1])
-#     change = ((latest / previous) - 1) * 100
-
-#     st.metric(
-#         label=f"{selected_coin} Price Binance",
-#         value=f"${latest:,.2f}",
-#         delta=f"{change:.2f}%"
-#     )
-#     st.caption(f"Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-
-# live1()
-
-
 # =================================
 # CHART DATA
 # =================================
@@ -129,9 +106,10 @@ def live_chart(chart):
 # TABS
 # =================================
 
-tab1, tab2 = st.tabs([
+tab1, tab2, tab3 = st.tabs([
     "Chart",
-    "Historical Data"
+    "Historical Data",
+    "Paper Trade"
 ])
 
 
@@ -167,3 +145,9 @@ with tab2:
     live_table()
 
 
+# =================================
+# PAPER TRADING
+# =================================
+
+with tab3:
+    st.warning("UNDER MAINTAINANCE")
